@@ -1,9 +1,10 @@
 import { useState } from 'react';
+
 import './styles/global.css';
 
 export function App() {
   const [number, setNumber] = useState(0);
-  const formatter = Intl.NumberFormat('en', { notation: 'compact' });
+  const formatter = Intl.NumberFormat('en', { notation: 'compact', roundingMode: 'floor' } as Intl.NumberFormatOptions);
   const formattedNumber = formatter.format(number);
 
   return (
